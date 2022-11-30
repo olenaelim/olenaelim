@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0/EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="auction.guad.mapper.MileageMapper">
+
+
+	<!-- 마일리지 충전 -->
+    <insert id="chargeMileage2" parameterType="auction.guad.dto.MileageDto">
+		INSERT INTO MILEAGE (CHARGE_AMOUNT, MEMBER_EMAIL) VALUES (#{chargeAmount}, #{memberEmail})		
+	 </insert> 
+	<update id="chargeMileage" parameterType="auction.guad.dto.MemberDto">
+		UPDATE MEMBER SET Mileage = mileage+(#{chargeAmount}) WHERE EMAIL = #{memberEmail}
+	</update>
+	
+	<select id="inquireMileageByEmail" parameterType="int" resultType="auction.guad.dto.MileageDto">
+		
+	</select>
+	
+	
+	<!-- 마일리지 사용 -->
+	<update id="useMileage" parameterType="auction.guad.vo.RequestMileageVo">
+	UPDATE MEMBER SET MILEAGE = MILEAGE - (#{itemPrice}) WHERE EMAIL = #{email}
+	</update>
+	<update id="usedMileage" parameterType="auction.guad.vo.RequestMileageVo">
+	UPDATE MEMBER SET MILEAGE_USED = MILEAGE_USED + (#{itemPrice}) WHERE EMAIL = #{email}
+	</update>
+	
+	<!-- 마일리지 반환 -->
+	<update id="returnMileage" parameterType="auction.guad.dto.MemberDto">
+	UPDATE MEMBER SET MILEAGE_USED = (MILEAGE_USED - (#{mileageUsed}) WHERE MEMBER_NUM = #{memberNum}
+	</update>
+	<update id="returnMileage2" parameterType="auction.guad.dto.MemberDto">
+	UPDATE MEMBER SET MILEAGE = (MILEAGE + (#{mileageUsed})) WHERE MEMBER_NUM = #{memberNum}
+	</update>
+	
+	
+</mapper>

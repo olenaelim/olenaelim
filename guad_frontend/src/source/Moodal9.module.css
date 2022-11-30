@@ -1,0 +1,109 @@
+:root {
+  --modal-duration: 1s;
+}
+
+.modal {
+  font-family: "SBAggroB";
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modalcontent {
+  position: relative;
+  margin: 10% auto;
+  text-align: center;
+  width: 650px;
+  height: 650px;
+  background-color: white;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+  font-family: "SBAggroB";
+  font-weight: 300;
+  border-radius: 10px;
+}
+.modalheader h3 {
+  font-size: 25px;
+  margin-top: 10px;
+}
+.modalheader img {
+  margin-top: 50px;
+}
+.modalbody {
+  width: 550px;
+  margin: 43px auto 0;
+}
+.main_tag {
+  text-align: left;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.3);
+  padding-bottom: 10px;
+}
+.main_tag p {
+  display: inline-block;
+}
+.main_tag p:nth-child(2) {
+  float: right;
+}
+.modalbody > ul {
+  height: 300px;
+  overflow-y: scroll;
+}
+.modalbody > ul::-webkit-scrollbar {
+  background-color: transparent;
+  width: 10px;
+}
+.modalbody > ul::-webkit-scrollbar-thumb {
+  background-color: #006e06;
+  border-radius: 50px;
+}
+.modalbody > ul > li {
+  text-align: left;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  overflow-y: auto;
+}
+.modalbody > ul > li > div {
+  display: inline-block;
+  text-align: left;
+}
+.modalbody > ul > li span {
+  font-size: 13px;
+  display: block;
+}
+.modalbody > ul > li p {
+  word-break: break-all;
+  font-size: 13px;
+  width: 350px;
+  float: right;
+  text-align: right;
+}
+.modalfooter {
+  width: 550px;
+  margin: 0 auto;
+}
+.modalfooter button {
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: #b9b9b9;
+  color: white;
+  margin-top: 50px;
+}
+
+@keyframes modalopen {
+  from {
+    margin-top: 15%;
+    opacity: 0;
+  }
+  to {
+    margin-top: 10%;
+    opacity: 1;
+  }
+}

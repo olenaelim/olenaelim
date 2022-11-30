@@ -1,0 +1,81 @@
+.header_b {
+  display: block;
+  width: 100%;
+  height: 130px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+header {
+  width: 1200px;
+  margin: 0 auto;
+  font-family: "SBAggroB";
+  background-color: transparent;
+}
+.h_logo_b {
+  margin: 40px 0 20px;
+  cursor: pointer;
+}
+.search_b {
+  background-color: #a8c4ad;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  float: right;
+  margin-top: 60px;
+  cursor: pointer;
+  position: relative;
+  background-image: url(../source/img/h_search.png);
+  background-repeat: no-repeat;
+  background-position: 12px center;
+  padding-left: 50px;
+  box-sizing: border-box;
+  color: white;
+  font-weight: 300;
+}
+.search_b:hover {
+  background-color: #098060;
+  width: 400px;
+  border-radius: 30px;
+  transition: 0.2s all ease;
+}
+.search_b:focus {
+  background-color: #098060;
+  width: 400px;
+  border-radius: 30px;
+  outline: none;
+}
+header ul {
+  float: right;
+  padding-top: 80px;
+  position: relative;
+}
+
+header ul li {
+  display: inline-block;
+  font-weight: 300;
+  margin-left: 60px;
+  cursor: pointer;
+  font-size: 17px;
+}
+header ul li:first-child {
+  margin-left: 40px;
+}
+.nick {
+  position: absolute;
+  right: 0px;
+  top: 30px;
+  color: #878787;
+  cursor: default;
+}
+.nick img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50px;
+  vertical-align: middle;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+.nick strong {
+  color: black;
+  font-weight: normal;
+}

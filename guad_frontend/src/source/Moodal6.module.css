@@ -1,0 +1,208 @@
+:root {
+  --modal-duration: 1s;
+}
+
+.modal2 {
+  font-family: "SBAggroB";
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modalcontent2 {
+  margin: 10% auto;
+  text-align: center;
+  width: 650px;
+  height: 860px;
+  background-color: white;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+  font-family: "SBAggroB";
+}
+
+.modalheader2 h2 {
+  font-size: 25px;
+  font-weight: 300;
+  padding: 50px 0 60px;
+}
+
+.modalbody2 {
+  font-weight: 300;
+  width: 550px;
+  margin: 0 auto;
+}
+.info_b {
+  display: block;
+  width: 100%;
+  text-align: left;
+  position: relative;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+.info_b > img {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  display: inline-block;
+}
+.info_in {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 20px;
+}
+.info1 {
+  font-size: 15px;
+  text-align: left;
+  display: block;
+}
+.info2 {
+  display: block;
+  width: 300px;
+  font-size: 20px;
+  margin-top: 10px;
+  text-align: left;
+}
+.info3 {
+  font-size: 15px;
+  color: #6d6d6d;
+  display: inline-block;
+  position: absolute;
+  bottom: 10px;
+}
+.info4 {
+  font-size: 25px;
+  font-weight: normal;
+  position: absolute;
+  bottom: 10px;
+  right: 0px;
+}
+.info_c {
+  width: 100%;
+  display: block;
+}
+.info_c span {
+  display: block;
+  font-size: 15px;
+  color: #909090;
+  text-align: left;
+  padding: 10px 0 10px 220px;
+}
+.info_c span strong {
+  font-size: 20px;
+  font-weight: normal;
+  float: right;
+}
+.info_d {
+  text-align: right;
+}
+
+.info_d span {
+  display: block;
+  text-align: left;
+  font-size: 17px;
+  margin-top: 44px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+.info_d button {
+  width: 120px;
+  height: 30px;
+  border: 1px solid #e1e1e1;
+  background-color: white;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.info_d input {
+  background-color: #e1e1e1;
+  height: 30px;
+  box-sizing: border-box;
+  padding-left: 10px;
+}
+.info_d p {
+  display: inline-block;
+  text-align: left;
+}
+.input_b1 {
+  margin-bottom: 10px;
+}
+.input1 {
+  width: 336px;
+  margin-left: 52px;
+}
+.input2 {
+  width: 466px;
+  margin-left: 20px;
+}
+
+.modalfooter2 {
+  font-family: "SBAggroB";
+  font-weight: 300;
+  width: 550px;
+  margin: 0 auto;
+}
+.modalfooter2 h2 {
+  font-size: 17px;
+  text-align: left;
+  display: block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  padding-bottom: 5px;
+  margin: 70px 0 10px;
+}
+.modalfooter2 p {
+  font-size: 15px;
+  text-align: right;
+}
+.modalfooter2 strong {
+  font-size: 25px;
+  text-align: right;
+  font-weight: normal;
+  padding-left: 10px;
+}
+.modalfooter2 button {
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  margin-top: 50px;
+}
+.outbtn1 {
+  background-color: #bcd7be;
+  color: white;
+  margin-right: 10px;
+}
+.outbtn1:hover {
+  background-color: #098060;
+  transition: 0.3s all ease;
+}
+.outbtn2 {
+  background-color: #e1e1e1;
+  color: black;
+}
+.outbtn2:hover {
+  background-color: #b9b9b9;
+  color: white;
+  transition: 0.3s all ease;
+}
+.daum {
+  position: absolute;
+  width: 550px;
+}
+
+@keyframes modalopen {
+  from {
+    margin-top: 15%;
+    opacity: 0;
+  }
+  to {
+    margin-top: 10%;
+    opacity: 1;
+  }
+}

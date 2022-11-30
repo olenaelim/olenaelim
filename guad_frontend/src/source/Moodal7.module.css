@@ -1,0 +1,97 @@
+:root {
+  --modal-duration: 1s;
+}
+
+.modal {
+  font-family: "SBAggroB";
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modalcontent {
+  position: relative;
+  margin: 10% auto;
+  text-align: center;
+  width: 650px;
+  height: 600px;
+  background-color: white;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+  font-family: "SBAggroB";
+  border-radius: 10px;
+}
+
+.modalheader img {
+  margin-top: 50px;
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+.modalbody ul {
+  margin-top: 50px;
+}
+
+.modalbody ul li {
+  width: 400px;
+  margin: 0 auto;
+  text-align: left;
+  padding-bottom: 5px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+.modalbody ul li p {
+  display: inline-block;
+}
+.front {
+  color: #b52929;
+  font-size: 15px;
+}
+.back {
+  font-size: 13px;
+  font-weight: 300;
+  float: right;
+}
+
+.modalfooter button {
+  margin-top: 48px;
+  width: 130px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 300;
+  color: #989898;
+}
+.out_btn {
+  margin-right: 10px;
+  background-color: #ffcbcf;
+}
+.out_btn:hover {
+  background-color: #b52929;
+  transition: 0.3s all ease;
+  color: white;
+}
+.yet_btn:hover {
+  background-color: rgb(126, 126, 126);
+  color: white;
+  transition: 0.3s all ease;
+}
+
+@keyframes modalopen {
+  from {
+    margin-top: 15%;
+    opacity: 0;
+  }
+  to {
+    margin-top: 10%;
+    opacity: 1;
+  }
+}

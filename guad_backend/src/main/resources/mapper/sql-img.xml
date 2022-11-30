@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0/EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="auction.guad.mapper.ImgMapper">
+
+	<insert id="insertSellImg"
+		parameterType="auction.guad.dto.ImgDto">
+		insert into img(item_num, item_img_name,
+		item_img_upfile, item_img_type, img_size)
+		values (#{itemNum}, #{itemImgName}, #{itemImgUpfile}, #{itemImgType},
+		#{imgSize} )
+	</insert>
+
+
+	<select id="selectImgByItemNumFirst"
+		resultType="auction.guad.dto.ImgDto">
+		SELECT * FROM IMG WHERE #{itemNum} ORDER BY img_num DESC
+		LIMIT 1
+	</select>
+
+
+	<select id="allImgByItemNum"
+		resultType="auction.guad.dto.ImgDto">
+		SELECT * FROM IMG WHERE item_num = #{itemNum} ORDER BY img_num
+
+	</select>
+
+
+	<delete id="deleteImg" parameterType="int">
+
+	</delete>
+
+
+</mapper>

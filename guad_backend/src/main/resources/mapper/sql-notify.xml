@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0/EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="auction.guad.mapper.NotifyMapper">
+
+	<!-- 신고접수 -->
+	<insert id="insertNotify"
+		parameterType="auction.guad.dto.NotifyDto">
+		INSERT INTO NOTIFY(ITEM_NUM, MEMBER_EMAIL, NOTIFY_TITLE,
+		NOTIFY_CONTENTS, NOTIFY_TIME)
+		VALUES (#{itemNum}, #{memberEmail},
+		#{notifyTitle}, #{notifyContents},
+		now())
+		<selectKey keyProperty="notifyNum" resultType="Integer">
+			select
+			last_insert_id()
+		</selectKey>
+	</insert>
+
+	<!-- 신고 목록 조회(관리자용) -->
+	<select id="notifyList" resultType="auction.guad.dto.NotifyDto">
+		SELECT N.*, I.ITEM_IMG_NAME AS ITEM_IMG_NAME, M.MIN_IMG_NUM
+		FROM NOTIFY N LEFT JOIN IMG I ON N.ITEM_NUM = I.ITEM_NUM JOIN
+		(SELECT MIN(IMG_NUM) AS 'MIN_IMG_NUM' FROM IMG GROUP BY ITEM_NUM) M ON
+		(I.IMG_NUM = M.MIN_IMG_NUM) ORDER BY N.NOTIFY_NUM ASC
+	</select>
+
+ 	<!-- 신고 목록 조회(회원용) -->
+ 	<select id="myNotifyList" resultType="auction.guad.vo.NotifyVo">
+		SELECT N.*, S.MEMBER_EMAIL AS SELLER_EMAIL FROM NOTIFY N LEFT JOIN SELL_ITEM S 
+		ON N.ITEM_NUM = S.ITEM_NUM WHERE N.MEMBER_EMAIL = #{memberEmail} ORDER BY NOTIFY_NUM ASC
+	</select>
+
+	<!-- 신고 상세조회 -->
+	<select id="notifyDetail" resultType="auction.guad.vo.NotifyVo">
+		SELECT N.NOTIFY_NUM,
+		N.ITEM_NUM, N.MEMBER_EMAIL, N.NOTIFY_TITLE, N.NOTIFY_CONTENTS,
+		N.NOTIFY_TIME, S.MEMBER_EMAIL AS SELLER_EMAIL, I.IMG_NUM
+		FROM NOTIFY N
+		LEFT JOIN SELL_ITEM S ON N.ITEM_NUM = S.ITEM_NUM LEFT JOIN
+		IMG I ON
+		N.ITEM_NUM = I.ITEM_NUM
+		WHERE N.NOTIFY_NUM = #{notifyNum}
+		ORDER BY
+		I.IMG_NUM DESC LIMIT 1
+	</select>
+
+</mapper>

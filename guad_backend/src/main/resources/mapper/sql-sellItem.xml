@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0/EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="auction.guad.mapper.SellItemMapper">
+
+	<!-- 마지막 상품 번호 -->
+	<select id="selectLastItemNum" resultType="int">
+		SELECT ITEM_NUM
+		FROM
+		SELL_ITEM ORDER BY ITEM_NUM DESC LIMIT 1;
+	</select>
+
+	<!-- 모든 상품목록 가져오기 -->
+	<select id="selectSellItemList"
+		resultType="auction.guad.dto.SellItemDto">
+
+		SELECT S.*, I.ITEM_IMG_NAME AS ITEM_IMG_NAME, M.MIN_IMG_NUM
+		FROM SELL_ITEM S
+		JOIN MEMBER M ON S.MEMBER_EMAIL = M.EMAIL
+		LEFT JOIN IMG I ON S.ITEM_NUM
+		= I.ITEM_NUM JOIN
+		(SELECT MIN(IMG_NUM) AS 'MIN_IMG_NUM' FROM IMG GROUP
+		BY ITEM_NUM) M ON
+		(I.IMG_NUM = M.MIN_IMG_NUM)
+		WHERE S.DELETE_YN = 'n' AND M.DELETE_YN != 'y'
+		ORDER BY S.ITEM_NUM DESC;
+
+	</select>
+
+	<!-- 판매 -->
+	<!-- 경매 및 일반 상품등록 -->
+	<insert id="insertSellItem"
+		parameterType="auction.guad.dto.SellItemDto">
+		INSERT INTO SELL_ITEM
+		(SELL_TYPE, MEMBER_EMAIL, ITEM_SUB,
+		ITEM_CONTENTS, ITEM_PRICE, ITEM_TYPE,
+		ITEM_D_TYPE, AUCTION_START_PRICE,
+		AUCTION_MAX_PRICE, AUCTION_MIN_PRICE,
+		AUCTION_PERIOD_TIME, AUCTION_PERIOD_DAY, AUCTION_FINISH_DATE,
+		AUCTION_RANDOM_METHOD, AUCTION_DISCOUNT_PER_HOUR)
+		VALUES
+		(#{sellType},
+		#{memberEmail}, #{itemSub}, #{itemContents},
+		#{itemPrice}, #{itemType}
+		, #{itemDType}, #{auctionStartPrice},
+		#{auctionMaxPrice},
+		#{auctionMinPrice},
+		#{auctionPeriodTime},
+		#{auctionPeriodDay},
+		#{auctionFinishDate}, #{auctionRandomMethod},
+		#{auctionDiscountPerHour})
+		
+	</insert>
+
+	<select id="selectSellItemDetail" parameterType="int"
+		resultType="auction.guad.vo.SellItemJoinMemberVo">
+		SELECT S.*, M.*, I.ITEM_IMG_NAME AS ITEM_IMG_NAME, M.MIN_IMG_NUM
+		FROM SELL_ITEM S LEFT JOIN MEMBER M ON
+		S.MEMBER_EMAIL = M.EMAIL
+		LEFT JOIN IMG I ON S.ITEM_NUM = I.ITEM_NUM JOIN
+		(SELECT MIN(IMG_NUM) AS 'MIN_IMG_NUM' FROM IMG GROUP BY ITEM_NUM) M ON
+		(I.IMG_NUM = M.MIN_IMG_NUM)
+		WHERE
+		S.ITEM_NUM = #{itemNum};
+
+		<!-- SELECT * FROM SELL_ITEM I LEFT JOIN MEMBER M ON I.MEMBER_EMAIL = M.EMAIL 
+			WHERE ITEM_NUM = #{itemNum} -->
+
+
+
+	</select>
+
+
+
+	<update id="updateSellItem"
+		parameterType="auction.guad.dto.SellItemDto">
+
+	</update>
+
+	<!-- 조회수 업데이트 -->
+	<update id="updateHitCnt" parameterType="int">
+		UPDATE SELL_ITEM SET
+		HIT_CNT = HIT_CNT + 1 WHERE ITEM_NUM = #{itemNum}
+	</update>
+
+	<update id="updateSoldYn" parameterType="int">
+		UPDATE SELL_ITEM SET
+		SOLD_YN = 'Y', SOLD_DATE = NOW()
+		WHERE ITEM_NUM = #{itemNum}
+	</update>
+	
+	<update id="updateSellState" parameterType="int">
+		UPDATE SELL_ITEM SET
+		SELL_STATE = '판매완료'
+		WHERE ITEM_NUM = #{itemNum}
+	</update>
+	
+	<update id="updateSellState2" parameterType="int">
+		UPDATE SELL_ITEM SET
+		SELL_STATE = '경매중'
+		WHERE ITEM_NUM = #{itemNum}
+	</update>
+
+	<delete id="deleteSellItem" parameterType="int">
+
+	</delete>
+
+	<!-- 내 판매내역 조회 -->
+	<!-- <select id="selectMySellList" parameterType="auction.guad.vo.RequestTradeVo"> 
+		SELECT * FROM SELL_ITEM I JOIN MEMBER M ON I.MEMBER_EMAIL = M.EMAIL WHERE 
+		MEMBER_EMAIL = #{memberEmail} </select> -->
+	<!-- 검색어(제목, 내용)를 포함하는 상품 목록 조회 -->
+	<select id="selectSearchList"
+		resultType="auction.guad.dto.SellItemDto">
+		SELECT I.*
+		FROM SELL_ITEM I JOIN MEMBER M ON I.MEMBER_EMAIL
+		= M.EMAIL
+		WHERE
+		I.DELETE_YN = 'n' AND M.DELETE_YN != 'y' AND
+		(ITEM_SUB
+		LIKE CONCAT('%', #{search}, '%') OR
+		ITEM_CONTENTS LIKE CONCAT('%',
+		#{search}, '%'))
+	</select>
+
+</mapper>

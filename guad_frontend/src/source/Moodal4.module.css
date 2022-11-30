@@ -1,0 +1,148 @@
+:root {
+  --modal-duration: 1s;
+}
+
+.modal {
+  
+  font-family: "SBAggroB";
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modalcontent {
+  position:relative;
+  margin: 10% auto;
+  text-align: center;
+  width: 650px;
+  height: 600px;
+  background-color: white;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+  font-family: "SBAggroB";
+}
+
+.close {
+  display: block;
+  text-align: right;
+  padding: 10px;
+  font-size: 30px;
+  color: rgb(184, 184, 184);
+}
+
+.close:hover,
+.close:focus {
+  transition: 1s all ease;
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modalheader img {
+ display: inline-block;
+ margin-top: 15px;
+}
+
+.modalheader .title {
+  font-size: 25px;
+  font-weight: 300;
+  margin-top: 25px;
+}
+
+.modalheader .member {
+  font-weight: 300;
+  margin-top: 10px;
+  color: #959595;
+}
+
+.modalbody {
+  display: inline-block;
+  text-align: center;
+  font-weight: 300;
+  margin-top: 40px;
+  width: 500px;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 15px;
+}
+
+.fix{
+  color: #9F9F9F;
+}
+
+
+
+.modalbody .seller{
+  text-align: left;
+
+}
+.modalbody .seller > h3 {
+  display: inline-block !important;
+  text-align: left;
+  margin-right: 37px;
+}
+
+.modalbody .category{
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.modalbody .category > h3 {
+  display: inline-block !important;
+  text-align: left;
+  margin-right: 51px;
+}
+
+.message {
+  display: inline-block;
+  text-align: center;
+  width: 480px;
+}
+
+.message > p {
+  color: #9f9f9f;
+  font-weight: 300;
+  text-align: left;
+}
+
+.modalfooter {
+  position: absolute;
+  bottom: 70px;
+  right: 75px;
+}
+.modalfooter button {
+  width: 130px;
+  height: 40px;
+  border-radius: 5px;
+  font-weight: 300;
+  margin: 5px 0 0 10px;
+  font-size: 15px;
+  color: black;
+}
+.redBtn {
+  background-color: #b52929;
+  color: white !important;
+}
+.redBtn:hover {
+  background-color: #f04b4b;
+  transition: 0.3s all ease;
+  color: white !important;
+}
+
+@keyframes modalopen {
+  from {
+    margin-top: 15%;
+    opacity: 0;
+  }
+  to {
+    margin-top: 10%;
+    opacity: 1;
+  }
+}

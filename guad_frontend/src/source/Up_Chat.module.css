@@ -1,0 +1,125 @@
+.chat_in {
+  padding: 10px;
+  font-size: 1.2em;
+}
+.chat_btn {
+  border: none;
+  padding: 10px;
+  background: green;
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.container {
+  display: inline-block;
+}
+
+.register {
+  position: fixed;
+  padding: 30px;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+  top: 35%;
+  left: 32%;
+  display: flex;
+  flex-direction: row;
+}
+.chat_box {
+  background-color: #dfdfdf;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 5px;
+  font-family: "nanumsquare";
+  font-weight: normal;
+  transition: 0.3s all ease;
+  margin-left: 9px;
+  transform: translate(0px, 2px);
+  height: 40px;
+}
+.member_list {
+  width: 20%;
+}
+
+.chat_messages {
+  height: 0%;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+.chat_messages::-webkit-scrollbar {
+  background-color: transparent;
+  width: 10px;
+}
+.chat_messages::-webkit-scrollbar-thumb {
+  background-color: #888888;
+  border-radius: 50px;
+}
+.send_message {
+  width: 100%;
+}
+
+.input_message {
+  display: none;
+  width: 295px;
+  padding: 5px;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
+.onChat {
+  display: block;
+  font-size: 20px;
+  width: 306px;
+  padding: 10px 5px 10px 5px;
+  border-radius: 5px;
+  background-color: transparent;
+  font-weight: bold;
+}
+.close_c {
+  display: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  color: white;
+  background-color: rgb(185, 185, 185);
+  position: absolute;
+}
+
+.avatar {
+  background-color: #5a5a5a;
+  padding: 3px 5px;
+  border-radius: 5px;
+  color: #fff;
+  width: 40px;
+  height: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.avatar.self {
+  color: #000;
+  background-color: rgb(255, 255, 255);
+}
+.message {
+  padding: 5px;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  margin: 5px 10px;
+  background-color: white;
+  border-radius: 5px;
+  color: black;
+}
+.message_data {
+  padding: 5px;
+  width: 205px;
+  word-break: break-all;
+}
+.message.self {
+  justify-content: end;
+  background-color: #3e3e3e;
+  color: white;
+}

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0/EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="auction.guad.mapper.SellItemResultMapper">
+
+	<!-- 상품 구매 -->
+	<insert id="insertSellItemResult"
+		parameterType="auction.guad.vo.RequestTradeVo">
+		INSERT INTO SELL_ITEM_RESULT
+		(ITEM_NUM, SELL_TYPE, SELLER_EMAIL, SELLER_PHONE, BUYER_EMAIL,
+		BUYER_PHONE, ADDRESS, ITEM_SUB, ITEM_PRICE, SOLD_DATE)
+		VALUES(#{itemNum},
+		#{sellType}, #{sellerEmail}, #{sellerPhone}, #{buyerEmail},
+		#{buyerPhone}, #{address}, #{itemSub}, #{itemPrice}, now())
+	</insert>
+
+	<!-- 구매기록 조회 / 아이디 + desc limit 1 -->
+	<select id="selectOneByBuyerEmailAndItemNum"
+		resultType="auction.guad.vo.RequestTradeVo">
+<!-- 		SELECT R.*, M.NICKNAME, I.ITEM_CONTENTS 
+		FROM SELL_ITEM_RESULT R 
+		LEFT JOIN SELL_ITEM I ON R.ITEM_NUM = I.ITEM_NUM
+		LEFT JOIN MEMBER M ON R.SELLER_EMAIL = M.EMAIL
+		WHERE BUYER_EMAIL = #{buyerEmail}
+		AND I.ITEM_NUM = #{itemNum}; -->
+		
+		SELECT R.*, M.NICKNAME, I.ITEM_CONTENTS, IMG.ITEM_IMG_NAME
+		FROM SELL_ITEM_RESULT R 
+		LEFT JOIN SELL_ITEM I ON R.ITEM_NUM = I.ITEM_NUM
+		LEFT JOIN MEMBER M ON R.SELLER_EMAIL = M.EMAIL
+        LEFT JOIN IMG IMG ON R.ITEM_NUM = IMG.ITEM_NUM
+		WHERE BUYER_EMAIL = #{buyerEmail}
+		AND I.ITEM_NUM = #{itemNum}
+		ORDER BY IMG.IMG_NUM LIMIT 1;
+	
+		</select>
+		
+	<!-- 마이페이지 구매내역 리스트 -->
+	<select id="selectMyBuyList" resultType="auction.guad.dto.SellItemResultDto">
+	   SELECT R.*, M.*, I.ITEM_IMG_NAME AS ITEM_IMG_NAME, M.MIN_IMG_NUM FROM SELL_ITEM_RESULT R LEFT JOIN IMG I ON R.ITEM_NUM = I.ITEM_NUM JOIN (SELECT MIN(IMG_NUM) AS 'MIN_IMG_NUM' FROM IMG GROUP BY ITEM_NUM) M ON
+		(I.IMG_NUM = M.MIN_IMG_NUM) WHERE BUYER_EMAIL = #{memberEmail} ORDER BY SOLD_DATE DESC LIMIT 3;
+	</select>
+	
+	<!-- 마이페이지 판매내역 리스트 -->
+	<select id="selectMySellList" resultType="auction.guad.vo.RequestTradeVo">
+	SELECT S.ITEM_CONTENTS, S.ITEM_NUM, S.ITEM_SUB, S.SELL_TYPE, S.SOLD_YN, S.ITEM_PRICE, S.SELL_STATE, S.AUCTION_FINISH_DATE, M.*,
+	R.SELLER_EMAIL, R.SELLER_PHONE, R.BUYER_EMAIL, R.BUYER_PHONE, R.ADDRESS, R.SOLD_DATE, I.ITEM_IMG_NAME AS ITEM_IMG_NAME FROM SELL_ITEM S 
+	LEFT JOIN SELL_ITEM_RESULT R ON S.ITEM_NUM = R.ITEM_NUM LEFT JOIN IMG I ON S.ITEM_NUM = I.ITEM_NUM JOIN (SELECT MIN(IMG_NUM) AS 'MIN_IMG_NUM' FROM IMG GROUP BY ITEM_NUM) M ON
+		(I.IMG_NUM = M.MIN_IMG_NUM) WHERE MEMBER_EMAIL = #{memberEmail}
+	ORDER BY S.WRITE_DATE DESC LIMIT 3;
+	</select>
+	
+	<!-- 마이페이지 구매 상세 -->
+	<select id="selectMyBuyListDe" resultType="auction.guad.dto.SellItemResultDto">
+	   SELECT R.*, M.*, I.ITEM_IMG_NAME AS ITEM_IMG_NAME FROM SELL_ITEM_RESULT R LEFT JOIN IMG I ON R.ITEM_NUM = I.ITEM_NUM JOIN (SELECT MIN(IMG_NUM) AS 'MIN_IMG_NUM' FROM IMG GROUP BY ITEM_NUM) M ON
+		(I.IMG_NUM = M.MIN_IMG_NUM) WHERE BUYER_EMAIL = #{memberEmail} ORDER BY SOLD_DATE DESC 
+	</select>
+	
+	<!-- 마이페이지 판매 상세 -->
+	<select id="selectMySellListDe" resultType="auction.guad.vo.RequestTradeVo">
+	SELECT S.ITEM_CONTENTS, S.ITEM_NUM, S.ITEM_SUB, S.SELL_TYPE, S.SOLD_YN, S.ITEM_PRICE, S.SELL_STATE, S.AUCTION_FINISH_DATE, M.*,
+	R.SELLER_EMAIL, R.SELLER_PHONE, R.BUYER_EMAIL, R.BUYER_PHONE, R.ADDRESS, R.SOLD_DATE, I.ITEM_IMG_NAME AS ITEM_IMG_NAME FROM SELL_ITEM S 
+	LEFT JOIN SELL_ITEM_RESULT R ON S.ITEM_NUM = R.ITEM_NUM LEFT JOIN IMG I ON S.ITEM_NUM = I.ITEM_NUM JOIN (SELECT MIN(IMG_NUM) AS 'MIN_IMG_NUM' FROM IMG GROUP BY ITEM_NUM) M ON
+		(I.IMG_NUM = M.MIN_IMG_NUM) WHERE MEMBER_EMAIL = #{memberEmail}
+	ORDER BY S.WRITE_DATE DESC
+	</select>
+	
+	
+	<!-- 일반판매종료 페이지에 들어갈 내용 조회 -->
+	<!-- /SELL_END/N/#{itemNum} -->
+	<!-- sell_item_result(SIR) / sell_item(SI) / member(seller, SM) / member(buyer, BM) -->
+	<select id="selectNormalSellEnd" resultType="auction.guad.vo.SellEndVo">
+		SELECT 
+				SIR.ITEM_NUM, SIR.SOLD_DATE, SIR.ITEM_PRICE, SIR.SELLER_EMAIL,
+				SI.ITEM_SUB, SI.ITEM_CONTENTS, SI.HIT_CNT, SI.ITEM_TYPE,
+	    		SM.NICKNAME AS SELLER_NICKNAME,
+	    		BM.NICKNAME AS BUYER_NICKNAME,
+                (SELECT ITEM_IMG_NAME FROM IMG WHERE ITEM_NUM = #{itemNum} ORDER BY IMG_NUM ASC LIMIT 1) AS ITEM_IMG_NAME,
+                (SELECT ITEM_IMG_NAME FROM IMG WHERE ITEM_NUM = #{itemNum} ORDER BY IMG_NUM ASC LIMIT 1 OFFSET 1) AS ITEM_IMG_NAME_SUB2,
+                (SELECT ITEM_IMG_NAME FROM IMG WHERE ITEM_NUM = #{itemNum} ORDER BY IMG_NUM ASC LIMIT 1 OFFSET 2) AS ITEM_IMG_NAME_SUB3
+		FROM 
+			SELL_ITEM_RESULT SIR LEFT JOIN MEMBER SM ON SIR.SELLER_EMAIL = SM.EMAIL
+								LEFT JOIN MEMBER BM ON SIR.BUYER_EMAIL = BM.EMAIL
+								LEFT JOIN SELL_ITEM SI ON SIR.ITEM_NUM = SI.ITEM_NUM
+		WHERE SIR.ITEM_NUM = #{itemNum}
+	</select>
+	
+</mapper>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0/EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="auction.guad.mapper.AuctionMapper">
+
+
+	<!-- 입찰 -->
+	<insert id="tryAuction"
+		parameterType="auction.guad.vo.AuctionVo">
+		INSERT INTO AUCTION_UP (ITEM_NUM, MEMBER_EMAIL, AUCTION_PRICE,
+		AUCTION_TIME) VALUES
+		(#{itemNum}, #{memberEmail}, #{auctionPrice},
+		now())
+		<!-- <selectKey keyProperty="auctionNum" resultType="Integer"> select last_insert_try() 
+			</selectKey> -->
+	</insert>
+	
+	<!--오름 입찰 조회 -->
+	<select id ="lastAuction" parameterType="auction.guad.vo.AuctionVo" resultType="auction.guad.vo.AuctionVo">
+		SELECT * FROM AUCTION_UP
+		WHERE ITEM_NUM = #{itemNum} ORDER BY AUCTION_UP_NUM DESC LIMIT 1;
+	</select>
+	
+	<!-- 내림랜덤 열수 조회 -->
+	<select id="naelimRandomCount" parameterType="int" resultType="int">
+		SELECT COUNT(*)
+		FROM AUCTION_DOWN
+		WHERE ITEM_NUM = #{itemNum}
+	</select>
+	
+	<insert id="naelimRandomPerDiscountInsert">
+		INSERT INTO AUCTION_DOWN (ITEM_NUM, AUCTION_PER,AUCTION_TIME) VALUES
+		(#{itemNum}, #{perDiscount}, now())
+	</insert>
+
+	<select id="naelimRandomPerDiscountAll" resultType="auction.guad.dto.AuctionDownDto">
+		SELECT * FROM AUCTION_DOWN WHERE item_num = #{itemNum} ORDER BY auction_down_num
+	</select>
+
+</mapper>

@@ -1,0 +1,191 @@
+:root {
+  --modal-duration: 1s;
+}
+
+.modal {
+  font-family: "SBAggroB";
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modalcontent {
+  position: relative;
+  margin: 10% auto;
+  text-align: center;
+  width: 650px;
+  height: 600px;
+  background-color: white;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+  font-family: "SBAggroB";
+  border-radius: 10px;
+}
+
+.close {
+  display: block;
+  text-align: right;
+  padding: 10px;
+  font-size: 30px;
+  color: rgb(184, 184, 184);
+}
+
+.close:hover,
+.close:focus {
+  transition: 1s all ease;
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modalheader {
+  display: inline-block;
+  text-align: center;
+  margin-top: 10px;
+  padding-bottom: 35px;
+  border-bottom: 1px solid #e0e0e0;
+  width: 500px;
+}
+
+.modalheader > h2 {
+  font-size: 30px;
+  font-weight: 300;
+
+  width: 500px;
+}
+
+.modalheader .member {
+  font-weight: 300;
+  margin-top: 10px;
+  color: #959595;
+}
+
+.modalbody {
+  display: inline-block;
+  width: 500px;
+}
+
+.charge {
+  display: inline-block;
+  border-bottom: 1px solid #e0e0e0;
+  width: 500px;
+  height: 130px;
+  text-align: left;
+}
+
+.charge .title {
+  display: inline-block;
+  font-weight: 300;
+  font-size: 17px;
+  color: #616161;
+  margin-top: 15px;
+}
+.charge input {
+  background-color: #efefef;
+  width: 200px;
+  height: 35px;
+  margin-left: 203px;
+  box-sizing: border-box;
+  padding-left: 10px;
+}
+
+.charge p {
+  display: inline-block;
+  font-weight: 300;
+  font-size: 25px;
+  margin-left: 5px;
+  vertical-align: bottom;
+}
+
+.mileageBox {
+  display: inline-block;
+  border-bottom: 1px solid #e0e0e0;
+  width: 500px;
+  height: 150px;
+  text-align: left;
+}
+
+.mileageBox .title {
+  display: inline-block;
+  font-weight: 300;
+  font-size: 17px;
+  color: #9d9d9d;
+  margin-top: 15px;
+}
+
+.mileageBox .number {
+  display: inline-block;
+  font-weight: 300;
+  font-size: 17px;
+  color: #9d9d9d;
+  float: right;
+  margin-right: 5px;
+  margin-top: 10px;
+}
+
+.total {
+  display: inline-block;
+  width: 500px;
+  height: 100px;
+  text-align: left;
+  margin-top: 5px;
+}
+
+.total .title {
+  display: inline-block;
+  font-weight: 300;
+  font-size: 20px;
+  color: #616161;
+  margin-top: 15px;
+}
+
+.total .number {
+  display: inline-block;
+  font-weight: 300;
+  font-size: 30px;
+  color: #797979;
+  float: right;
+  margin-right: 5px;
+  margin-top: 10px;
+}
+
+.modalfooter {
+  display: inline-block;
+  text-align: center;
+  width: 400px;
+}
+
+.modalfooter button {
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  font-weight: 100;
+  margin: 5px 0 0 10px;
+  font-size: 17px;
+  background-color: #7bb987;
+  color: white;
+  cursor: pointer;
+}
+
+.modalfooter button:hover {
+  background-color: #00460e;
+  transition: 0.3s all ease;
+  color: white !important;
+}
+
+@keyframes modalopen {
+  from {
+    margin-top: 15%;
+    opacity: 0;
+  }
+  to {
+    margin-top: 10%;
+    opacity: 1;
+  }
+}

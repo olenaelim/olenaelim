@@ -1,0 +1,108 @@
+:root {
+  --modal-duration: 1s;
+}
+
+.modal {
+  font-family: "SBAggroB";
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modalcontent {
+  margin: 10% auto;
+  text-align: center;
+  width: 650px;
+  height: 600px;
+  background-color: white;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+  position: relative;
+  font-family: "SBAggroB";
+}
+
+.modalheader img {
+  width: 100px;
+  height: 100px;
+  margin: 70px auto 50px;
+}
+
+.modalbody h2 {
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.modalbody h3 {
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 45px;
+}
+
+.modalfooter h2 {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.modalfooter h3 {
+  font-size: 20px;
+  font-weight: 300;
+  color: #8a8a8a;
+  margin: 0px 30px 0px;
+  word-break: break-all;
+}
+.modalfooter img {
+  height: 15px;
+  margin: 7px 0 12px;
+}
+
+.modalfooter button {
+  width: 200px;
+  height: 40px;
+  background-color: #bcd7be;
+  color: white;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 300;
+  position: absolute;
+  bottom: 50px;
+  right: 50%;
+  transform: translate(50%, 0px);
+}
+.modalfooter button:hover {
+  background-color: #098060;
+  transition: 0.3s all ease;
+}
+
+.close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 30px;
+  color: rgb(184, 184, 184);
+}
+
+.close:hover,
+.close:focus {
+  transition: 1s all ease;
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@keyframes modalopen {
+  from {
+    margin-top: 15%;
+    opacity: 0;
+  }
+  to {
+    margin-top: 10%;
+    opacity: 1;
+  }
+}

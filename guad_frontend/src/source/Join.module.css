@@ -1,0 +1,190 @@
+.join_all {
+  width: 1200px;
+  margin: 0 auto;
+  border-top: 3px solid #000;
+  margin-top: 90px;
+  font-family: "SBAggroB";
+  background-color: #fffafa;
+  text-align: center;
+}
+.join_all h2 {
+  font-size: 30px;
+  font-weight: 300;
+  text-align: center;
+  margin: 90px 0;
+}
+.join_all h3 {
+  font-size: 25px;
+  margin-bottom: 70px;
+  margin-left: 130px;
+  text-align: left;
+}
+.input_set {
+  width: 820px;
+  margin: 0 auto;
+}
+.input_set ul {
+  text-align: right;
+  padding-right: 80px;
+}
+.input_set label {
+  font-size: 20px;
+  font-weight: 300;
+  padding-right: 20px;
+}
+.input_set p {
+  display: block;
+  color: #ff0000;
+  opacity: 0.7;
+  font-size: 13px;
+  font-weight: 300;
+  text-align: left;
+  margin: 5px 0 0 150px;
+  line-height: 1.2;
+}
+.input_set input {
+  background-color: #ebebeb;
+  height: 50px;
+  font-size: 20px;
+  font-weight: 300;
+  box-sizing: border-box;
+  padding: 12px 0 11px 10px;
+}
+.input_set ul li.id_in {
+  margin-bottom: 25px;
+}
+.input_set ul li.nick_in {
+  margin-bottom: 20px;
+}
+.input_set ul li.pass_in {
+  margin-bottom: 25px;
+}
+.input_set ul li.check_in {
+  margin-bottom: 20px;
+}
+.input_set ul li.tel_in {
+  margin-bottom: 20px;
+}
+.input_set ul li.gen_in {
+  margin-bottom: 50px;
+}
+.input_set ul li.add_in {
+  margin-bottom: 20px;
+}
+.input_set ul li:last-child {
+  margin-bottom: 110px;
+}
+.input_set ul li.id_in input {
+  width: 460px;
+}
+.input_set ul li.id_in button {
+  margin-left: 20px;
+}
+.input_set ul li.id_in button:hover,
+.input_set ul li.nick_in button:hover,
+.input_set ul li.add_in button:hover,
+.input_set ul li.gen_in button:hover {
+  background-color: #a0a0a0;
+  color: white;
+  border: none;
+  transition: 0.3s all ease;
+}
+.input_set ul li.nick_in input {
+  width: 460px;
+}
+.input_set ul li.nick_in input::placeholder {
+  font-size: 15px;
+}
+.input_set ul li.nick_in button {
+  margin-left: 20px;
+}
+
+.input_set ul li.pass_in input {
+  width: 600px;
+}
+.input_set ul li.check_in input {
+  width: 600px;
+}
+.input_set ul li.tel_in input {
+  width: 600px;
+}
+.input_set ul li.add_in input {
+  width: 460px;
+}
+.input_set ul li.add_in button {
+  margin-left: 20px;
+}
+.input_set ul li:last-child input {
+  width: 600px;
+}
+.input_set > ul > li.gen_in > button {
+  display: inline-block;
+  height: 50px;
+  width: 292px;
+}
+.gen_false {
+  color: black;
+}
+
+.gen_true {
+  background-color: #f38790 !important;
+  color: white;
+  border: none;
+}
+
+.input_set ul li.gen_in label {
+  padding-top: 15px;
+  display: inline-block;
+}
+#man {
+  margin-right: 15px;
+}
+.input_set > ul > li > button {
+  width: 120px;
+  height: 50px;
+  vertical-align: top;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  font-size: 20px;
+  font-weight: 300;
+  cursor: pointer;
+}
+.last_btn {
+  cursor: pointer;
+  width: 450px;
+  height: 60px;
+  font-size: 16px;
+  background-color: white;
+  margin: 0 auto 150px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+.last_btn:hover {
+  background-color: #f38790;
+  color: white;
+  border: none;
+  transition: 0.3s all ease;
+}
+
+#idConfirm {
+  position: absolute;
+  width: 155px;
+  height: 37px;
+  left: 675px;
+  top: 592px;
+
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+#nicknameConfirm {
+  position: absolute;
+  width: 78px;
+  height: 16px;
+  left: 675px;
+  top: 709px;
+
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+}

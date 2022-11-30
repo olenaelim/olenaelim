@@ -1,0 +1,138 @@
+.cont1 {
+  width: 1130px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "SBAggroB";
+  font-weight: 300;
+  border-bottom: 1px solid rgba(0, 0, 0, 0, 15);
+}
+.cont1 h2 {
+  font-size: 40px;
+  font-weight: normal;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  padding-bottom: 10px;
+  margin: 105px 0 100px;
+}
+.cont1 p {
+  font-size: 30px;
+  padding: 50px 0 100px;
+}
+.cont1 button {
+  width: 200px;
+  height: 40px;
+  border-radius: 50px;
+  font-size: 20px;
+  background-color: #00bc89;
+  color: white;
+  margin-bottom: 40px;
+  cursor: pointer;
+}
+.cont1 button:hover {
+  background-color: #098060;
+  transition: 0.3s all ease;
+}
+.cont2 {
+  width: 1130px;
+  margin: 0 auto;
+  padding-top: 70px;
+  font-family: "SBAggroB";
+  font-weight: 300;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+.cont2 img {
+  width: 250px;
+  height: 250px;
+  border-radius: 10px;
+  display: inline-block;
+  vertical-align: top;
+}
+.right_side {
+  display: inline-block;
+  width: 830px;
+  margin-left: 50px;
+}
+.category {
+  display: block;
+  font-size: 20px;
+  color: #6b6b6b;
+  margin-bottom: 5px;
+}
+.category p {
+  display: inline-block;
+}
+.title {
+  font-size: 30px;
+  display: block;
+  margin-bottom: 5px;
+}
+.add {
+  font-size: 17px;
+  color: #b7b7b7;
+  margin-bottom: 60px;
+}
+.add strong {
+  float: right;
+}
+.seller {
+  font-size: 20px;
+  font-weight: normal;
+  text-align: right;
+  margin-bottom: 10px;
+}
+.del {
+  font-size: 20px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.del strong {
+  color: #696969;
+  float: right;
+}
+.price {
+  width: 100%;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+.price strong {
+  font-size: 30px;
+  color: #696969;
+  float: right;
+  font-weight: normal;
+}
+.btn_area {
+  width: 1130px;
+  margin: 20px auto 140px;
+  padding-bottom: 70px;
+  font-family: "SBAggroB";
+  font-weight: 300;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+.btn_area button {
+  width: 560px;
+  height: 60px;
+  font-size: 25px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.my {
+  color: #8c8c8c;
+  background-color: white;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+}
+.my:hover {
+  background-color: rgb(168, 168, 168);
+  color: white;
+  box-shadow: none;
+  transition: 0.3s all ease;
+}
+.go {
+  margin-left: 10px;
+  background-color: #098060;
+  color: white;
+}
+.go:hover {
+  background-color: #0fa880;
+  color: white;
+  transition: 0.3s all ease;
+}

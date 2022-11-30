@@ -1,0 +1,17 @@
+npm i react-router-dom@5
+npm i axios
+npm i qs
+npm i --save react-toastify
+npm install react-icons classnames
+npm i sockjs-client --save
+npm i stompjs --save
+
+npm i styled-components
+npm i jwt-decode
+
+npm i react-js-pagination
+
+
+npm i react-daum-postcode
+//숫자 콤마, 날짜, 신용카드, 전화번호 등 숫자 포멧설정
+npm install react-number format

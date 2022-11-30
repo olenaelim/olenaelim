@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0/EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="auction.guad.mapper.CategoryMapper">
+
+	<select id="selectAllCategory" resultType="auction.guad.dto.CategoryDto">
+		SELECT * FROM category
+		ORDER BY ITEM_TYPE, ITEM_D_TYPE
+	</select>
+	
+	<select id="selectDistinctItemType" resultType="auction.guad.dto.CategoryDto">
+		SELECT DISTINCT ITEM_TYPE FROM CATEGORY
+		ORDER BY ITEM_TYPE
+	</select>
+	
+</mapper>

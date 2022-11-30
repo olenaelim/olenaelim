@@ -1,0 +1,271 @@
+.sell_all {
+  width: 1130px;
+  margin: 0 auto;
+}
+.sell_top h2 {
+  font-family: "SBAggroB";
+  font-size: 23px;
+  margin-top: 60px;
+}
+.sell_top h2 strong {
+  color: #e63947;
+  display: inline-block;
+}
+.cate_btn {
+  display: inline-block;
+  margin-top: 10px;
+  font-family: "SBAggroB";
+  font-weight: 300;
+}
+.cate_btn:active {
+  color: red;
+}
+.sell_top select {
+  color: #6b6b6b;
+  font-size: 15px;
+  font-family: "SBAggroB";
+  font-weight: 300;
+}
+.sell_top > ul {
+  padding-top: 40px;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  margin: 49px 0 55px;
+}
+.sell_top ul li {
+  display: inline-block;
+}
+.cate_true {
+  background-color: #098060;
+  border: none;
+  color: white;
+}
+.cate_false {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+.sell_top ul li button {
+  width: 150px;
+  height: 43px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: "SBAggroB";
+  font-weight: 300;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.sell_top ul li:nth-child(1) button:hover {
+  background-color: #098060;
+  color: white;
+  transition: 0.3s all ease-in;
+}
+.sell_top ul li:nth-child(2) button:hover {
+  background-color: #098060;
+  color: white;
+  transition: 0.3s all ease-in;
+}
+.sell_top ul li:nth-child(3) button:hover {
+  background-color: #098060;
+  color: white;
+  transition: 0.3s all ease-in;
+}
+.sell_top ul li:nth-child(4) button:hover {
+  background-color: #098060;
+  color: white;
+  transition: 0.3s all ease-in;
+}
+
+/* 카테고리 작업 */
+
+.cate_box {
+  font-family: "SBAggroB";
+  font-weight: 300;
+  position: absolute;
+  top: 250px;
+  z-index: 10;
+}
+.cate_box > p {
+  padding-top: 10px;
+}
+.cate_main {
+  display: none;
+  height: 100%;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+.cate_main p {
+  font-size: 20px;
+  font-weight: normal;
+  text-align: center;
+  padding: 30px 0 20px;
+}
+.cate_main ul {
+  margin-bottom: 100px;
+}
+.cate_main ul li {
+  width: 200px;
+  display: block;
+  padding: 11px 0 11px 30px;
+}
+.cate_main ul li:hover {
+  background-color: #888;
+  color: white;
+  transition: 0.3s all ease;
+}
+.cate_main .close {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  font-size: 20px;
+  border-radius: 50px;
+  background: #e5e5e5;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  color: white;
+  line-height: 1.2;
+}
+.cate_option {
+  display: none;
+  vertical-align: top;
+  height: 100%;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-left: none;
+  color: black;
+}
+.cate_option p {
+  font-size: 20px;
+  text-align: center;
+  padding: 30px 0 20px;
+  font-weight: normal;
+}
+.cate_option ul {
+  margin-bottom: 100px;
+}
+.cate_option ul li {
+  color: #6b6b6b;
+  width: 200px;
+  display: block;
+  padding: 11px 0 11px 30px;
+}
+.cate_option ul li:hover {
+  background-color: #888;
+  color: white;
+  transition: 0.3s all ease;
+}
+
+/* 위에 카테작업중 */
+
+.sell_bot {
+  width: 100%;
+}
+.item_info {
+  display: inline-block;
+  margin-right: 69px;
+  margin-bottom: 117px;
+}
+li.item_info:nth-child(4n) {
+  margin-right: 0px;
+}
+
+.item_info .item_bb {
+  width: 230px;
+  height: 230px;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.item_bb .del_icon {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 30px;
+  height: 30px;
+}
+.end_a {
+  position: absolute;
+}
+.end_a p {
+  color: white;
+  width: 230px;
+  height: 230px;
+  text-align: center;
+  font-size: 40px;
+  background-color: rgba(0, 0, 0, 0.4);
+  font-family: "SBAggroB";
+  font-weight: 300;
+  line-height: 6;
+}
+.item_info > a > span {
+  display: block;
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tex1 {
+  font-family: "Nanumsquare";
+  font-weight: bold;
+  font-size: 13px;
+  color: #545454;
+  padding: 10px 0 5px;
+}
+.tex2 {
+  font-size: 13px;
+  font-family: "Nanumsquare";
+  padding: 0 0 5px;
+}
+.tex3 {
+  font-size: 13px;
+  font-weight: bold;
+  font-family: "Nanumsquare";
+}
+.tex3 strong {
+  font-weight: 1000;
+  font-size: 15px;
+  margin-left: 10px;
+}
+.count_p {
+  font-family: "Nanumsquare";
+  font-size: 20px;
+  font-weight: bold;
+  margin: 55px auto 100px;
+  display: block;
+  text-align: center;
+}
+.count_p ul {
+  list-style: none;
+  padding: 0;
+}
+.count_p ul li {
+  display: inline-block;
+  padding: 0 5px;
+}
+.count_p ul li button {
+  background-color: white;
+  cursor: pointer;
+}
+.reset {
+  cursor: pointer;
+}
+.empty {
+  margin: 150px 0 150px;
+  display: block;
+  text-align: center;
+  font-family: "SBAggroB";
+  font-size: 25px;
+  font-weight: 300;
+  line-height: 1.3;
+}
+.empty img {
+  width: 90px;
+  height: 90px;
+}
+
+/* 아이템 이미지 */
+
+.item_img {
+  width: 230px;
+  height: 230px;
+}

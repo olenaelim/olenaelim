@@ -1,0 +1,234 @@
+.all_box {
+  width: 1130px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "SBAggroB";
+}
+.all_box > h2 {
+  display: block;
+  margin: 120px 0 66px;
+  padding-bottom: 10px;
+  font-size: 30px;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+.in_box {
+  width: 620px;
+  margin: 0 auto;
+}
+.in_box > ul > li > label {
+  display: block;
+  text-align: left;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.in_box > ul > li > label > strong {
+  font-size: 15px;
+  font-weight: 300;
+  color: #ff0000;
+  float: right;
+  margin-top: 5px;
+}
+.in_box > ul > li:nth-child(1) {
+  margin-bottom: 75px;
+}
+/* 이상목 */
+#button_active {
+  background-color: #098060;
+  color: white;
+  width: 200px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+/*  */
+#button_no {
+  width: 200px;
+  height: 50px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.in_box > ul > li:nth-child(1) button:hover {
+  background-color: #098060;
+  color: white;
+  transition: 0.3s all ease;
+}
+.mid {
+  margin: 0 10px;
+}
+.in_box > ul > li:nth-child(2) {
+  margin-bottom: 75px;
+}
+.in_box > ul > li:nth-child(2) select {
+  width: 305px;
+  height: 50px;
+  text-align: center;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+.select_one {
+  margin-right: 10px;
+}
+.in_box > ul > li:nth-child(3) {
+  margin-bottom: 75px;
+}
+.in_box > ul > li:nth-child(3) input {
+  width: 600px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  padding-left: 20px;
+}
+.in_box > ul > li:nth-child(4) {
+  margin-bottom: 75px;
+}
+.in_box > ul > li:nth-child(4) textarea {
+  width: 620px;
+  height: 153px;
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: #f0f0f0;
+  resize: none;
+  border-radius: 5px;
+}
+.in_box > ul > li:nth-child(5) {
+  margin-bottom: 55px;
+}
+.in_box > ul > li:nth-child(5) input {
+  width: 600px;
+  height: 50px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+.in_box > ul > li:nth-child(6) {
+  margin-bottom: 55px;
+}
+.in_box > ul > li:nth-child(6) select {
+  display: block;
+  width: 620px;
+  height: 50px;
+  border-radius: 5px;
+  padding-left: 20px;
+  background: #f0f0f0;
+}
+.in_box > ul > li:nth-child(7) input[type="text"] {
+  width: 600px;
+  height: 50px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+.in_box > ul > li:nth-child(7) {
+  margin-bottom: 90px;
+}
+.in_box > ul > li:nth-child(8) {
+  margin-bottom: 90px;
+}
+.in_box > ul > li:nth-child(8) p {
+  display: block;
+  font-size: 15px;
+  font-weight: 300;
+  display: block;
+  text-align: left;
+  color: #ff0000;
+  margin: 5px 0 5px;
+}
+.in_box > ul > li:nth-child(8) img {
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
+}
+.mid_imgg {
+  margin: 0 10px;
+}
+.subBtn {
+  width: 450px;
+  height: 60px;
+  border-radius: 5px;
+  background-color: #098060;
+  font-size: 20px;
+  margin-bottom: 150px;
+  color: white;
+}
+.subBtn:hover {
+  background-color: #0fa880;
+  transition: 0.3s all ease;
+}
+.down_b .chose_p {
+  float: left;
+}
+.down_b form {
+  float: right;
+}
+.down_b form label {
+  vertical-align: top;
+}
+.down_b form input {
+  margin: 0 5px 0 20px;
+}
+.down_b p {
+  display: block;
+  width: 620px;
+  height: 85px;
+  padding: 5px 0;
+  margin-top: 30px;
+  text-align: left;
+  font-size: 15px;
+  font-family: "nanumsquare";
+}
+.down_b p strong {
+  color: #ff0000;
+  font-size: 17px;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.percent {
+  font-size: 14px !important;
+  display: contents !important;
+}
+
+.fileupload {
+  display: inline-block;
+  width: 630px;
+}
+
+.photo_b p {
+  font-weight: 300;
+  font-size: 15px;
+  color: #ff0000;
+  text-align: left;
+  margin: 10px 0 10px;
+}
+
+.photo_b img {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  margin: 0 5px 0 5px;
+}
+
+.auction_d {
+  display: block;
+  text-align: left;
+}
+.auction_d input {
+  background-color: white;
+  font-weight: 300;
+  margin-bottom: 5px;
+}
+
+/* 파일 업로드 */
+input[type="file"] {
+  position: absolute;
+  width: 0;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+}

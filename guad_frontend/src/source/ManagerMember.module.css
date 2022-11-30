@@ -1,0 +1,179 @@
+.All_Mbox {
+  text-align: center;
+  font-family: "SBAggroB";
+  width: 1130px;
+  margin: 0 auto 170px;
+}
+
+.page_name {
+  text-align: left;
+  display: block;
+  padding-top: 105px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  font-size: 40px;
+  font-family: "SBAggroB";
+  font-weight: 400;
+  line-height: 48px;
+  cursor: pointer;
+}
+
+.Mbox {
+  height: 150px;
+  background-color: #b14b54;
+  border-radius: 10px;
+  margin: 40px 0 40px 0;
+  text-align: left;
+}
+
+.logo_box {
+  display: inline-block;
+  height: 90px;
+  width: 90px;
+  padding: 30px 20px 30px 30px;
+}
+
+
+.logo_boxi img {
+  height: 90px;
+  width: 90px;
+  border-radius: 50px;
+  border: 1px solid rgba(0, 0, 0, 30%);
+}
+
+.mileage_box {
+  margin-top: 50px;
+  vertical-align: top;
+  display: inline-block;
+  font-size: 20px;
+}
+.mileage_box h3 {
+  font-weight: 300;
+  margin-bottom: 10px;
+  width: 720px;
+  color: #ffffff;
+}
+
+.mileage_box strong {
+  font-weight: normal;
+  color: #000000;
+  font-size: 30px;
+}
+
+.Mbox_button {
+  vertical-align: top;
+  display: inline-block;
+}
+.Mbox_button button {
+  display: block;
+  width: 250px;
+  height: 40px;
+  text-align: center;
+  border-radius: 3px;
+  background-color: #ffffff;
+  color: #8c8c8c;
+  font-size: 17px;
+  margin-bottom: 5px;
+  font-weight: 300;
+}
+.Mbox_button button:hover {
+  background-color: #ff8b95;
+  color: white;
+  transition: 0.3s all ease;
+}
+
+.Mbox_button .member {
+  margin-top: 30px !important;
+  cursor: pointer;
+}
+
+.Mbox_button .mileage {
+  cursor: pointer;
+}
+
+.category {
+  padding-bottom: 10px;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  font-size: 15px;
+}
+
+.category .list {
+  font-size: 20px;
+  display: inline-block;
+  margin: 0 100px 0 25px;
+  font-weight: 300;
+}
+
+.category .name {
+  display: inline-block;
+  margin-right: 250px;
+}
+
+.category .id {
+  display: inline-block;
+  margin-right: 350px;
+}
+
+.category .address {
+  display: inline-block;
+}
+
+.page_name {
+  text-align: left;
+  display: block;
+  padding-top: 105px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  font-size: 40px;
+  font-family: "SBAggroB";
+  font-weight: 400;
+  line-height: 48px;
+  cursor: pointer;
+}
+
+.user_detail {
+  text-align: left;
+}
+
+.user_list {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  height: 100px;
+}
+
+.user_list .logo {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.user_list .name {
+  text-align: center;
+  width: 220px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.user_list .id {
+  text-align: center;
+  width: 400px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.user_list .address {
+  text-align: center;
+  width: 390px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.user_list > div > h3 {
+  font-size: 15px;
+  font-weight: 300;
+  overflow: hidden;
+  padding-bottom: 90px;
+  padding-top: 10px;
+}

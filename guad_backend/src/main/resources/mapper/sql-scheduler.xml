@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0/EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="auction.guad.mapper.SchedulerMapper">
+
+	<select id="auctionUpPeriodCheck"
+		resultType="auction.guad.dto.SellItemResultDto">
+		
+		SELECT MAX.MAX_AUCTION_UP_NUM AS AUCTION_UP_NUM,
+		MAX.ITEM_NUM, S.MEMBER_EMAIL AS SELLER_EMAIL, MS.PHONE AS
+		SELLER_PHONE, MB.EMAIL AS BUYER_EMAIL, MB.PHONE AS BUYER_PHONE,
+		MB.ADDRESS AS ADDRESS, S.ITEM_SUB, AU.AUCTION_PRICE AS ITEM_PRICE
+		from
+		(SELECT MAX(AUCTION_UP_NUM) AS MAX_AUCTION_UP_NUM, MEMBER_EMAIL,
+		ITEM_NUM FROM AUCTION_UP GROUP BY ITEM_NUM ) MAX
+		LEFT JOIN AUCTION_UP AU ON MAX.MAX_AUCTION_UP_NUM = AU.AUCTION_UP_NUM
+		LEFT JOIN MEMBER MB ON MAX.MEMBER_EMAIL = MB.EMAIL
+		LEFT JOIN SELL_ITEM S ON MAX.ITEM_NUM = S.ITEM_NUM
+		LEFT JOIN MEMBER MS ON S.MEMBER_EMAIL = MS.EMAIL
+		WHERE
+		S.DELETE_YN = 'n' AND MS.DELETE_YN != 'y' AND S.SOLD_YN = 'n' AND S.AUCTION_FINISH_DATE <![CDATA[<]]> now()
+		
+	</select>
+	
+
+
+	<update id="auctionSellitemUpdate"
+		parameterType="auction.guad.dto.SellItemResultDto">
+		UPDATE SELL_ITEM SET SOLD_YN = 'y', SOLD_DATE = now() WHERE ITEM_NUM = #{itemNum}
+	</update>
+
+	<insert id="auctionResultInsert"
+		parameterType="auction.guad.dto.SellItemResultDto">
+		INSERT INTO SELL_ITEM_RESULT(ITEM_NUM, SELL_STATE, SELL_TYPE, SELLER_EMAIL, SELLER_PHONE, BUYER_EMAIL, BUYER_PHONE, ADDRESS, ITEM_SUB, ITEM_PRICE, SOLD_DATE)
+		VALUES (#{itemNum}, #{sellState}, #{sellType}, #{sellerEmail}, #{sellerPhone}, #{buyerEmail}, #{buyerPhone}, #{address}, #{itemSub}, #{itemPrice}, now())
+		<selectKey keyProperty="itemNum" resultType="int">
+        	select last_insert_id()
+    	</selectKey>
+	</insert>
+	
+	<delete id="auctionDelete"
+		parameterType="auction.guad.dto.SellItemResultDto">
+		
+	</delete>
+
+
+
+
+
+
+</mapper>

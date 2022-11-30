@@ -1,0 +1,150 @@
+:root {
+  --modal-duration: 1s;
+}
+
+.button {
+  background: #428bca;
+  padding: 1em 2em;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #3876ac;
+}
+
+.modal {
+  font-family: "SBAggroB";
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modalcontent {
+  margin: 10% auto;
+  text-align: center;
+  width: 650px;
+  height: 600px;
+  background-color: white;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+}
+
+.modalheader {
+  background: white;
+  font-size: 30px;
+  font-weight: 300;
+}
+.modalheader h2 {
+  text-align: start;
+  padding: 70px 0 65px 50px;
+}
+
+.modalbody {
+  padding: 10px 20px;
+  background: #fff;
+}
+.modalbody > ul > li > button {
+  border: 1px solid #bfbfbf;
+  width: 500px;
+  height: 55px;
+  background-color: #fffafa;
+  margin: 5px 0;
+  padding: 0 0 0 10px;
+  text-align: left;
+  position: relative;
+  cursor: pointer;
+}
+.check_1 {
+  font-size: 20px;
+}
+.check_1 strong {
+  font-weight: 300;
+}
+.check_1 span {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+}
+.check_1 span img {
+  width: 24px;
+  height: 24px;
+}
+
+.check_9 {
+  font-size: 17px;
+  font-weight: 300;
+}
+.check_9 strong {
+  font-size: 14px;
+}
+
+.check_9 span {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.check_9 span img {
+  width: 24px;
+  height: 24px;
+}
+.modalfooter {
+  background: white;
+  padding: 53px 10px 10px;
+  text-align: center;
+}
+.modalfooter button {
+  width: 150px;
+  height: 40px;
+  border: 1px solid #bfbfbf;
+  font-size: 17px;
+  font-weight: 300;
+  background-color: white;
+}
+.modalfooter button:hover {
+  background-color: #f38790;
+  transition: 0.5s all ease;
+  color: white;
+  border: none;
+}
+
+.close {
+  padding: 10px;
+  float: right;
+  font-size: 30px;
+  color: rgb(184, 184, 184);
+}
+
+.close:hover,
+.close:focus {
+  transition: 1s all ease;
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@keyframes modalopen {
+  from {
+    margin-top: 15%;
+    opacity: 0;
+  }
+  to {
+    margin-top: 10%;
+    opacity: 1;
+  }
+}

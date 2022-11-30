@@ -1,0 +1,75 @@
+@import url("https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css");
+@font-face {
+  font-family: "SBAggroB";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff")
+    format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SBAggroB";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroM.woff")
+    format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SBAggroB";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroL.woff")
+    format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+.E_box {
+  width: 660px;
+  margin: 140px auto 200px;
+  font-family: "NanumSquare";
+  text-align: center;
+  border-top: 3px solid rgba(9, 128, 96, 0.5);
+}
+.E_box h1 {
+  font-size: 40px;
+  font-family: "SBAggroB";
+  font-weight: bold;
+  color: #098060;
+  text-align: left;
+  margin: 140px 0 10px 30px;
+}
+.E_box h1 strong {
+  color: #e63947;
+}
+.i1 {
+  padding: 30px 10px;
+}
+.i2 {
+  margin: 140px auto 30px;
+}
+.E_box h2 {
+  font-size: 20px;
+  text-align: left;
+  margin-left: 30px;
+}
+.E_box h3 {
+  font-size: 25px;
+  text-align: left;
+  margin: 140px 0 10px 30px;
+  font-weight: bold;
+}
+.in_box {
+  background-color: rgba(85, 161, 141, 0.4);
+  text-align: left;
+  box-sizing: border-box;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 0 30px;
+  font-size: 15px;
+}
+.t1 {
+  border-bottom: 2px solid white;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+.t2 {
+  padding-bottom: 70px;
+}

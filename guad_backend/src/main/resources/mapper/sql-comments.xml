@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0/EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="auction.guad.mapper.CommentsMapper">
+	
+	<!-- 전체 후기 조회 -->
+	<select id="commentsListByItemNum" resultType="auction.guad.dto.CommentsDto">
+		SELECT * FROM COMMENTS WHERE ITEM_NUM = #{itemNum}
+	</select>
+	
+	
+	<!-- 후기 작성 -->
+	<insert id="insertComment" parameterType="auction.guad.dto.CommentsDto">
+	 	INSERT INTO COMMENTS (ITEM_NUM, MEMBER_EMAIL, WRITER_NICKNAME, CONTENTS) VALUES 
+	 	(#{itemNum}, #{memberEmail}, #{writerNickname}, #{contents})	
+		
+	</insert>
+	
+	<!-- 후기 상세보기 -->
+	<select id="selectCommentDetail" parameterType="int" resultType="auction.guad.dto.CommentsDto">
+		
+	</select>
+	
+	<update id="updateComment" parameterType="auction.guad.dto.CommentsDto">
+		
+	</update>
+	
+ 	<!-- 후기 삭제 업데이트 -->
+	<update id="deleteComment" parameterType="int">
+		UPDATE COMMENTS SET DELETE_YN = "N" WHERE COMMENT_NUM = #{commentNum}
+	</update>
+	
+
+</mapper>

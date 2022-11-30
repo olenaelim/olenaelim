@@ -1,0 +1,297 @@
+.All_Mboxi {
+  width: 100%;
+  text-align: center;
+  font-family: "SBAggroB";
+  width: 1130px;
+  margin: 0 auto 50px;
+  font-size: 15px;
+}
+
+.page_namei {
+  text-align: left;
+  display: block;
+  padding-top: 105px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  font-size: 40px;
+  font-family: "SBAggroB";
+  font-weight: 400;
+  line-height: 48px;
+  cursor: pointer;
+}
+
+.Mboxi {
+  height: 150px;
+  background-color: #7bb987;
+  border-radius: 10px;
+  margin: 40px 0 40px 0;
+  text-align: left;
+}
+
+.logo_boxi {
+  display: inline-block;
+  height: 90px;
+  width: 90px;
+  padding: 30px 20px 30px 30px;
+}
+
+.logo_boxi img {
+  height: 90px;
+  width: 90px;
+  border-radius: 50px;
+  border: 1px solid rgba(0, 0, 0, 30%);
+}
+
+.mileage_boxi {
+  margin-top: 50px;
+  vertical-align: top;
+  display: inline-block;
+  font-size: 20px;
+}
+.mileage_boxi h3 {
+  margin-bottom: 10px;
+  width: 500px;
+  color: #ffffff;
+  font-weight: 300;
+}
+
+.mileage_boxi strong {
+  font-weight: bold;
+  color: #000000;
+}
+.Mbox_button {
+  vertical-align: top;
+  float: right;
+  margin-right: 50px;
+}
+.Mbox_button ul li {
+  display: inline-block;
+  margin-left: 30px;
+}
+.Mbox_button ul li:nth-child(1) button {
+  background-image: url("../source/img/my_b1.png");
+}
+.Mbox_button ul li:nth-child(2) button {
+  background-image: url("../source/img/my_b2.png");
+}
+.Mbox_button ul li:nth-child(3) button {
+  background-image: url("../source/img/my_b3.png");
+}
+.Mbox_button button {
+  display: block;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  border-radius: 50px;
+  background-color: #ffffff;
+  color: #8c8c8c;
+  margin-bottom: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.Mbox_button p {
+  font-size: 13px;
+  color: white;
+  font-weight: 300;
+  text-align: center;
+}
+.Mbox_button p:hover {
+  color: #00460e;
+}
+.Mbox_button button:hover {
+  background-color: #00460e;
+  color: white;
+  transition: 0.3s all;
+}
+.Mbox_button .member {
+  margin-top: 30px !important;
+  cursor: pointer;
+}
+
+.Mbox_button .mileage {
+  cursor: pointer;
+}
+
+.categoryi h3 {
+  font-size: 25px;
+  text-align: left;
+  display: block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  padding-bottom: 10px;
+}
+
+.member_infoi {
+  text-align: left;
+  display: inline-block;
+  width: 570px;
+}
+
+.fixi {
+  width: 100px !important;
+  padding-top: 30px;
+}
+
+.member_infoi > div > h3 {
+  text-align: left;
+  display: inline-block;
+  width: 400px;
+  font-weight: 300;
+}
+
+.member_infoi > h3 {
+  text-align: left;
+  display: inline-block;
+  width: 100px;
+  font-weight: 300;
+}
+
+.member_infoi > input {
+  text-align: left;
+  display: inline-block;
+  background-color: #f0f0f0;
+  width: 450px;
+  height: 40px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  padding-left: 10px;
+  font-weight: 300;
+}
+.member_infoi > input::placeholder {
+  font-size: 13px;
+  color: #a5a5a5;
+}
+.member_infoi > p {
+  font-size: 13px;
+  font-weight: 300;
+  margin-top: 5px;
+  margin-left: 100px;
+}
+
+.member_infoi > div > input {
+  text-align: left;
+  display: inline-block;
+  background-color: #f0f0f0;
+  width: 320px;
+  height: 40px;
+  margin-top: 30px;
+  box-sizing: border-box;
+  padding-left: 10px;
+  font-weight: 300;
+}
+
+.searchi {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  width: 120px;
+  height: 40px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-weight: 300;
+}
+.searchi:hover {
+  background-color: #797979;
+  color: white;
+  transition: 0.3s all ease;
+  border: none;
+}
+
+.addressi {
+  width: 100px !important;
+}
+.btn_area {
+  display: block;
+  margin: 70px auto 140px;
+  text-align: center;
+  font-weight: 300;
+}
+.btni {
+  color: #989898;
+  background-color: #d9d9d9;
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.getouti {
+  margin-right: 10px;
+}
+.getouti:hover {
+  background-color: #e63947;
+  color: white;
+  transition: 0.3s all ease;
+}
+.updatei:hover {
+  background-color: #797979;
+  color: white;
+  transition: 0.3s all ease;
+}
+.check {
+  font-weight: 300;
+  margin-bottom: 250px;
+}
+.check label {
+  display: block;
+  margin: 160px 320px 10px 0;
+}
+.check input {
+  width: 500px;
+  height: 40px;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  padding-left: 20px;
+  margin-right: 5px;
+}
+.check button {
+  background-color: #d9d9d9;
+  color: black;
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 17px;
+  cursor: pointer;
+}
+.check button:hover {
+  background-color: #797979;
+  color: white;
+  transition: 0.3s all ease;
+}
+
+/* 파일 업로드 */
+input[type="file"] {
+  position: absolute !important;
+  width: 0 !important;
+  height: 0!important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border: 0 !important;
+}
+
+.fileupload {
+  display: inline-block !important;
+}
+
+.photo_b  {
+  margin-top: 20px;
+  text-align: left;
+  margin-left: 280px;
+  list-style:none;
+  
+}
+
+.photo_b img {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  margin: 0 5px 0 5px;
+}
+
+.photo_b h3 {
+  display: inline-block;
+  font-weight: 300;
+  font-size: 15px;
+  text-align: left;
+  vertical-align: top;
+  margin-right: 40px;
+}

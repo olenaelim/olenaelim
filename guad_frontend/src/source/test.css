@@ -1,0 +1,16 @@
+
+
+.판매대기 { 
+  background-color : #253C76  
+}
+
+.경매중 {
+  background-color : #d3c43d
+} 
+.판매완료 {
+  background-color : #217A4F
+} 
+
+.경매만료 {
+  background-color : #BA101E
+}
